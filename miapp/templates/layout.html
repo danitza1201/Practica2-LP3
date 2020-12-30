@@ -1,0 +1,62 @@
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title %}
+
+            {% endblock title %}
+            | Hoyos Gomez Amasifuen |
+        </title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+
+    </head>
+    <body>
+        <header>
+            <div id="logotipo">
+                <img src="{% static 'images/logodjango2.png' %}" />
+                <h1>
+                    Proyecto Web HGA
+                </h1>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="/inicio">Inicio</a>
+                </li>
+                <li>
+                    <a href="/saludo">Mensaje de Saludo</a>
+                </li>
+                <li>
+                    <a href="/rango">Mostrar Numeros [a,b]</a>
+                </li>
+                <li>
+                    <a href="/rango2">Mostrar Numeros [a,b] (Con Parámetro)</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="barra">
+            <span class="esquina-izquierda"></span>
+            <span class="relleno-barra"></span>
+            <span class="esquina-derecha"></span>
+
+        </div>
+
+        <div id="content">
+            <div class="box">
+                
+                {% block content %}
+                    <strong> 
+                       Contenido por defecto desde layout.html  
+                    </strong>                    
+                {% endblock content %}
+            </div>
+        </div>
+        <footer>
+            UNTELS - Lenguaje de Programación III &copy; Hoyos Amasifuen Gomez
+        </footer>
+    </body>
+</html>
